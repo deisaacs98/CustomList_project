@@ -17,7 +17,7 @@ namespace CustomListUnitTests
         public void AddItemToCustomList_CheckCountEquals1()
         {
             // Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string shoe = "Jordans";
             int actual;
             int expected = 1;
@@ -38,7 +38,7 @@ namespace CustomListUnitTests
         public void AddItemToCustomList_CheckForItemAtIndex0()
         {
             // Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string expected = "Pippen";
             string actual;
 
@@ -56,7 +56,7 @@ namespace CustomListUnitTests
         public void AddItemsToCustomList_CheckForItemAtIndex3()
         {
             // Arrange
-            CustomList list = new CustomList();
+            CustomList<string> list = new CustomList<string>();
             string name1 = "Stephon";
             string name2 = "Marbella";
             string name3 = "JT";
@@ -89,7 +89,7 @@ namespace CustomListUnitTests
         public void AddItemsToCustomList_CheckDataTypeOfInteger()
         {
             // Arrange
-            CustomList list = new CustomList();
+            CustomList<int> list = new CustomList<int>();
             int value = 10;
             int actual;
             string expected = "Int 32";
@@ -107,16 +107,23 @@ namespace CustomListUnitTests
         public void AddItemsToCustomList_AddConflictingDataType_GetStatus1()
         {
             // Arrange
-            CustomList list = new CustomList();
+            CustomList<int> list = new CustomList<int>();
             int value= 91;
             string name = "Rodman";
             int actual;
+            int expected = 1;
             // Act
             list.Add(value);
-            int expected = 1;
             actual = list.Add(name);
             // Assert
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+
+        public void AddItemsToCustomList_IncreaseCapacity
+        {
+
         }
     }
 }
