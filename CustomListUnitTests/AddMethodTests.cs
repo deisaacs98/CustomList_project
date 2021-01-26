@@ -78,51 +78,62 @@ namespace CustomListUnitTests
 
         }
 
-        //When we add an item to our, we can assume the data type stays the same.
-        //However, it may be wise to double check this.
-        //For example, we don't want to add an integer to a list and have it
-        //convert to a double.
-        //This test should verify that if an integer is added, the item at the
-        //corresponding index should also be an integer.
+        //Since our list is a modified array, we will need to change
+        //the size of the array each time we add or remove an item.
+        //This test will check that the capacity increases when
+        //necessary.
         [TestMethod]
 
-        public void AddItemsToCustomList_CheckDataTypeOfInteger()
+        public void AddItemsToCustomList_IncreaseCapacity()
         {
-            // Arrange
-            CustomList<int> list = new CustomList<int>();
-            int value = 10;
+            //Arrange
+            CustomList<double> list = new CustomList<double>();
+            double price1 = 2.01;
+            double price2 = 3.50;
+            double price3 = 3.51;
+            double price4 = 4.20;
+            int capacity1;
             int actual;
-            string expected = "Int 32";
-            // Act
-            list.Add(value);
-            actual = list[0].GetType().Name;
-            // Assert
-            Assert.AreEqual(expected, actual);
-        }
-        //Get an error code saying that the data type conflicts with others in list.
-        //Will need to add list of status codes that can be returned.
-        //Method will not need to return value to function, but may be used for testing.
-        [TestMethod]
 
-        public void AddItemsToCustomList_AddConflictingDataType_GetStatus1()
-        {
-            // Arrange
-            CustomList<int> list = new CustomList<int>();
-            int value= 91;
-            string name = "Rodman";
-            int actual;
-            int expected = 1;
-            // Act
-            list.Add(value);
-            actual = list.Add(name);
-            // Assert
-            Assert.AreEqual(expected, actual);
+            //Act
+            list.Add(price1);
+            list.Add(price2);
+            list.Add(price3);
+            list.Add(price4);
+
+
+            //Assert
+
         }
 
+        //When we add an item to the list,
+        //we need to check that the items previously
+        //added to the list remain.
+
         [TestMethod]
 
-        public void AddItemsToCustomList_IncreaseCapacity
+        public void AddItemToCustomList_AddItemIndex3_CheckItemIndex2()
         {
+            // Arrange
+            CustomList<string> list = new CustomList<string>();
+            string name1 = "John";
+            string name2 = "Paul";
+            string name3 = "George";
+            string name4 = "Ringo";
+            string expected = "George";
+            string actual;
+
+            // Act
+            list.Add(name1);
+            list.Add(name2);
+            list.Add(name3);
+            list.Add(name4);
+
+            actual = list[2];
+
+            // Assert
+
+            Assert.AreEqual(expected, actual);
 
         }
     }
