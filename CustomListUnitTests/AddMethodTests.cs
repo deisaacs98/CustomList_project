@@ -91,7 +91,7 @@ namespace CustomListUnitTests
             double price1 = 2.01;
             double price2 = 3.50;
             double price3 = 3.51;
-            double price4 = 4.20;
+            double price4 = 5.10;
             int capacity1;
             int actual;
 

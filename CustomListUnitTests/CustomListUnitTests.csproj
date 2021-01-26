@@ -49,6 +49,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SortMethodTest.cs" />
+    <Compile Include="PlusOperatorOverloadTest.cs" />
+    <Compile Include="MinusOperatorOverloadTest.cs" />
     <Compile Include="AddMethodTests.cs" />
     <Compile Include="OverrideToStringTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
