@@ -51,7 +51,7 @@ namespace CustomListUnitTests
 
             Assert.AreEqual(expected, actual);
         }
-
+        [TestMethod]
         public void RemoveItemFromCustomList_CheckForItemAtIndex1()
         {
             // Arrange
