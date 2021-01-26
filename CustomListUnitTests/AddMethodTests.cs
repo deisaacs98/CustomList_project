@@ -93,7 +93,7 @@ namespace CustomListUnitTests
             double price2 = 3.50;
             double price3 = 3.51;
             double price4 = 5.10;
-            int capacity1;
+            int expected = 8;
             int actual;
 
             //Act
