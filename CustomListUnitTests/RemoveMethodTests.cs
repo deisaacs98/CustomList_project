@@ -97,7 +97,6 @@ namespace CustomListUnitTests
             list.Remove(price1);
             actual = list.Capacity;
 
-
             //Assert
             Assert.AreEqual(expected, actual);
 
