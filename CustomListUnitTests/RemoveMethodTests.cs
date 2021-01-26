@@ -4,6 +4,7 @@ using CustomListProject;
 
 namespace CustomListUnitTests
 {
+    
     [TestClass]
     public class RemoveMethodTests
     {
@@ -73,6 +74,8 @@ namespace CustomListUnitTests
             Assert.AreEqual(expected, actual);
         }
 
+        //When the list goes from 4 items to 3 items, the capacity should
+        //decrease from 8 to 4.
         [TestMethod]
 
         public void RemoveItemsFromCustomList_DecreaseCapacity()
@@ -83,8 +86,7 @@ namespace CustomListUnitTests
             double price2 = 3.50;
             double price3 = 3.51;
             double price4 = 5.10;
-            double price5 = 
-            int capacity1;
+            int expected = 4;
             int actual;
 
             //Act
@@ -92,11 +94,42 @@ namespace CustomListUnitTests
             list.Add(price2);
             list.Add(price3);
             list.Add(price4);
+            list.Remove(price1);
+            actual = list.Capacity;
 
 
             //Assert
+            Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
+
+        public void RemoveItemFromCustomList_RemoveItemIndex1_CheckItemIndex1()
+        {
+            // Arrange
+            CustomList<string> list = new CustomList<string>();
+            string name1 = "John";
+            string name2 = "Paul";
+            string name3 = "George";
+            string name4 = "Ringo";
+            string expected = "George";
+            string actual;
+
+            // Act
+            list.Add(name1);
+            list.Add(name2);
+            list.Add(name3);
+            list.Add(name4);
+            list.Remove(name2);
+
+            actual = list[1];
+
+            // Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
 
     }
 

@@ -79,7 +79,8 @@ namespace CustomListUnitTests
         }
 
         //Since our list is a modified array, we will need to change
-        //the size of the array each time we add or remove an item.
+        //the size of the array each time we add or remove an item
+        //if the capacity equals the count.
         //This test will check that the capacity increases when
         //necessary.
         [TestMethod]
@@ -100,10 +101,11 @@ namespace CustomListUnitTests
             list.Add(price2);
             list.Add(price3);
             list.Add(price4);
+            actual = list.Capacity;
 
 
             //Assert
-
+            Assert.AreEqual(expected, actual);
         }
 
         //When we add an item to the list,

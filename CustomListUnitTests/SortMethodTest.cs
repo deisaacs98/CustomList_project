@@ -4,15 +4,34 @@ using CustomListProject;
 
 namespace CustomListUnitTests
 {
-
+    //Temporarily empty until required user stories are complete.
+    //
     [TestClass]
     public class SortMethodTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void SortIntegerList_Increasing()
+        {
+
+        }
+        [TestMethod]
+        public void SortIntegerList_Increasing()
+        {
+
+        }
+        [TestMethod]
+        public void SortStringList_Increasing()
+        {
+
+        }
+        [TestMethod]
+        public void SortStringList_Decreasing()
         {
 
         }
     }
+}
+}
+}
 }
 }
