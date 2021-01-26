@@ -107,6 +107,28 @@ namespace CustomListUnitTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        public void AddItemsToCustomList_CheckCount()
+        {
+            //Arrange
+            CustomList<double> list = new CustomList<double>();
+            double price1 = 2.01;
+            double price2 = 3.50;
+            double price3 = 3.51;
+            double price4 = 5.10;
+            int expected = 4;
+            int actual;
+
+            //Act
+            list.Add(price1);
+            list.Add(price2);
+            list.Add(price3);
+            list.Add(price4);
+            actual = list.Count;
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         //When we add an item to the list,
         //we need to check that the items previously
