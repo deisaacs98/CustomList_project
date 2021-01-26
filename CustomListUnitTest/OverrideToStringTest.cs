@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using CustomListProject;
+using CustomList_proj;
 
 namespace CustomListUnitTests
 {
@@ -24,7 +24,7 @@ namespace CustomListUnitTests
             list.Add(secondNumber);
             list.ToString() = actual;
             //Assert
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{248D2589-1758-45D2-90C8-3DF0949771E2}</ProjectGuid>
+    <ProjectGuid>{0847D017-83D2-4B38-BAEF-85E905235E27}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CustomListProject</RootNamespace>
-    <AssemblyName>CustomListProject</AssemblyName>
+    <RootNamespace>CustomList_proj</RootNamespace>
+    <AssemblyName>CustomList_proj</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

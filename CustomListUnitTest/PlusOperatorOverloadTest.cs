@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using CustomListProject;
+using CustomList_proj;
 
 namespace CustomListUnitTests
 {
-    
+
     [TestClass]
     public class PlusOperatorOverloadTest
     {
@@ -57,7 +57,7 @@ namespace CustomListUnitTests
             list2.Add(num4);
             list3.Add(num5);
             list3.Add(num6);
-            list = list1 + list2+list3;
+            list = list1 + list2 + list3;
             actual = list[4];
             //Assert
             Assert.AreEqual(expected, actual);

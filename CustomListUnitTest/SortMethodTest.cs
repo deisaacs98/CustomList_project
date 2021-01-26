@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using CustomListProject;
+using CustomList_proj;
 
 namespace CustomListUnitTests
 {
@@ -30,8 +30,4 @@ namespace CustomListUnitTests
 
         }
     }
-}
-}
-}
-}
 }

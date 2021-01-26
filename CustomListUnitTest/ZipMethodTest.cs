@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using CustomListProject;
+using CustomList_proj;
 
 namespace CustomListUnitTests
 {
@@ -52,7 +52,7 @@ namespace CustomListUnitTests
             list.Zip(zipList);
             actual = list[1];
             //Assert
-            Assert.AreEqual(expected,actual);
+            Assert.AreEqual(expected, actual);
 
         }
         [TestMethod]
@@ -98,7 +98,7 @@ namespace CustomListUnitTests
             list.Add(name3);
             zipList.Add(name4);
             zipList.Add(name5);
-            
+
             actual = list[2];
             //Assert
             Assert.AreEqual(expected, actual);
@@ -141,7 +141,7 @@ namespace CustomListUnitTests
             double price6 = 17.24;
             double price7 = 19.99;
             double price8 = 12.40;
-            double expected=16;
+            double expected = 16;
             //Expected to be 16 here. This is because each list has a count of 4,
             //which requires that each capacity must equal 8.
             double actual;
