@@ -22,6 +22,7 @@ namespace CustomListUnitTests
         {
             //Arrange
             CustomList<int> list = new CustomList<int>();
+            CustomList<int> zipList = new CustomList<int>();
             int firstNumber = 1;
             int secondNumber = 2;
             int expected = 1;
