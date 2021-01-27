@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace CustomList_proj
 {
+<<<<<<< HEAD
+    class CustomList
+    {
+    }
+}
+=======
     public class CustomList<T>
     {
         private T[] items = new T[4];
@@ -101,3 +107,4 @@ namespace CustomList_proj
         }
     }
 }
+>>>>>>> 524a4113a88f5d1ef90c6c7b2bb4c02eb43981d6
