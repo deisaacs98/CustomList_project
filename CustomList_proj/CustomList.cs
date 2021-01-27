@@ -9,10 +9,14 @@ namespace CustomList_proj
     public class CustomList<T>
     {
         private T[] items = new T[4];
-        //Array that will hold values for our CustomList. Starts with size 4, then doubles each time
-        //count is equal to capacity.
+        //Array that will hold values for our CustomList. Starts with size 4, then grows as necessary.
         private int capacity = 4;
         private int count;
+        public CustomList()
+        {
+
+        }
+        
 
         public int Count
         {
@@ -41,17 +45,12 @@ namespace CustomList_proj
             //When an item is added, the index value should be equal to the count.
             count++;
 
-            if (count == capacity)
+            if (count > capacity)
             {
-                capacity = 2 * capacity;
-                T[] temp = new T[capacity];
-
+                capacity = count;
             }
-            else if (count < capacity)
-            {
-                items[count] = item;
-            }
-
+            items[count] = item;
+            
         }
 
         public void Remove(T item)
@@ -97,7 +96,8 @@ namespace CustomList_proj
         //
         public override string ToString()
         {
-
+            string printList = "";
+            return printList;
         }
     }
 }
