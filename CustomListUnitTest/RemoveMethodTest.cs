@@ -1,49 +1,50 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using CustomList_proj;
+using CustomListProject;
 
 namespace CustomListUnitTests
 {
-    [TestClass]
-    public class AddMethodTests
-    {
 
-        // How do we know we've successfully added something to our CustomList?
-        // Count goes up when we add?
-        // test that the item was added to the right index (indexes outside of zero)
-        // test for different types of data working correctly
+    [TestClass]
+    public class RemoveMethodTests
+    {
+        //How do we know if something has been remoed from the list?
+        //Count goes down and all items with index greater than the
+        //removed item will have its index decrease by 1.
 
         [TestMethod]
-        public void AddItemToCustomList_CheckCountEquals1()
+        public void RemoveItemFromCustomList_CheckCountEquals0()
         {
             // Arrange
             CustomList<string> list = new CustomList<string>();
             string shoe = "Jordans";
             int actual;
-            int expected = 1;
+            int expected = 0;
 
             // Act
             list.Add(shoe);
+            list.Remove(shoe);
             actual = list.Count;
 
             //Assert
 
             Assert.AreEqual(expected, actual);
 
-
         }
 
         [TestMethod]
 
-        public void AddItemToCustomList_CheckForItemAtIndex0()
+        public void RemoveItemFromCustomList_CheckForItemAtIndex0()
         {
             // Arrange
             CustomList<string> list = new CustomList<string>();
-            string expected = "Pippen";
+            string jersey = "Pippen";
+            string expected = null;
             string actual;
 
             // Act
-            list.Add(expected);
+            list.Add(jersey);
+            list.Remove(jersey);
             actual = list[0];
 
             //Assert
@@ -51,63 +52,33 @@ namespace CustomListUnitTests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-
-        public void AddItemsToCustomList_CheckForItemAtIndex3()
+        public void RemoveItemFromCustomList_CheckForItemAtIndex1()
         {
             // Arrange
             CustomList<string> list = new CustomList<string>();
-            string name1 = "Stephon";
-            string name2 = "Marbella";
-            string name3 = "JT";
-            string name4 = "Rob";
-            string expected = "Rob";
+            string jersey1 = "Pippen";
+            string jersey2 = "Jordan";
+            string jersey3 = "Rodman";
+            string expected = jersey3;
             string actual;
 
             // Act
-            list.Add(name1);
-            list.Add(name2);
-            list.Add(name3);
-            list.Add(name4);
-
-            actual = list[3];
-
-            // Assert
-
-            Assert.AreEqual(expected, actual);
-
-        }
-
-        //Since our list is a modified array, we will need to change
-        //the size of the array each time we add or remove an item
-        //if the capacity equals the count.
-        //This test will check that the capacity increases when
-        //necessary.
-        [TestMethod]
-
-        public void AddItemsToCustomList_IncreaseCapacity()
-        {
-            //Arrange
-            CustomList<double> list = new CustomList<double>();
-            double price1 = 2.01;
-            double price2 = 3.50;
-            double price3 = 3.51;
-            double price4 = 5.10;
-            int expected = 8;
-            int actual;
-
-            //Act
-            list.Add(price1);
-            list.Add(price2);
-            list.Add(price3);
-            list.Add(price4);
-            actual = list.Capacity;
-
+            list.Add(jersey1);
+            list.Add(jersey2);
+            list.Add(jersey3);
+            list.Remove(jersey2);
+            actual = list[1];
 
             //Assert
+
             Assert.AreEqual(expected, actual);
         }
-        public void AddItemsToCustomList_CheckCount()
+
+        //When the list goes from 4 items to 3 items, the capacity should
+        //decrease from 8 to 4.
+        [TestMethod]
+
+        public void RemoveItemsFromCustomList_DecreaseCapacity()
         {
             //Arrange
             CustomList<double> list = new CustomList<double>();
@@ -123,20 +94,17 @@ namespace CustomListUnitTests
             list.Add(price2);
             list.Add(price3);
             list.Add(price4);
-            actual = list.Count;
+            list.Remove(price1);
+            actual = list.Capacity;
 
 
             //Assert
             Assert.AreEqual(expected, actual);
+
         }
-
-        //When we add an item to the list,
-        //we need to check that the items previously
-        //added to the list remain.
-
         [TestMethod]
 
-        public void AddItemToCustomList_AddItemIndex3_CheckItemIndex2()
+        public void RemoveItemFromCustomList_RemoveItemIndex1_CheckItemIndex1()
         {
             // Arrange
             CustomList<string> list = new CustomList<string>();
@@ -152,13 +120,19 @@ namespace CustomListUnitTests
             list.Add(name2);
             list.Add(name3);
             list.Add(name4);
+            list.Remove(name2);
 
-            actual = list[2];
+            actual = list[1];
 
             // Assert
 
             Assert.AreEqual(expected, actual);
 
         }
+
+
     }
+
+
+
 }
