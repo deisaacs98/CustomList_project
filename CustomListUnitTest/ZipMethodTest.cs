@@ -90,7 +90,7 @@ namespace CustomListUnitTests
             string name3 = "Terry";
             string name4 = "Graham";
             string name5 = "Michael";
-            string expected = "Terry"
+            string expected = "Terry";
             string actual;
             //Act
             list.Add(name1);
