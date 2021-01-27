@@ -2,18 +2,18 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("CustomListUnitTest")]
+[assembly: AssemblyTitle("UnitTestProject1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("CustomListUnitTest")]
+[assembly: AssemblyProduct("UnitTestProject1")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 
-[assembly: Guid("25b9887b-dff2-4efb-90fe-3304b21d4e47")]
+[assembly: Guid("41e4fca7-9a63-45e0-8783-94c565c20711")]
 
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
