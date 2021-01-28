@@ -17,7 +17,7 @@ namespace CustomList_proj
         private T[] tempItems;
         private int capacity = 4;
         private int count;
-        
+
         public T this[int index]
         {
             get
@@ -58,13 +58,16 @@ namespace CustomList_proj
             count++;
             if (count > capacity)
             {
+                tempItems = new T[count];
+                for (int i = 0; i < capacity; i++)
+                {
+                    tempItems[i] = items[i];
+                }
                 capacity = count;
-                tempItems = new T[capacity];
-                tempItems = items;
                 tempItems[capacity - 1] = item;
                 items = tempItems;
             }
-            items[count] = item;
+            items[count - 1] = item;
 
         }
 
@@ -73,22 +76,44 @@ namespace CustomList_proj
             //Removing an item is a more complicated, because the indices for all items
             //that follow must be adjusted. Similarly to the Add method, we will take capacity
             //into account. This is not completely necessary, but is good for consistency.
-            count--;
-            if (count >= 4)
+            //
+
+            bool foundMatch=false;
+            bool removedItem = false;
+            foreach (T thing in items)
             {
-                capacity = count;
-                tempItems = new T[capacity];
-                tempItems = items;
-                
+                if(thing.Equals(item))
+                {
+                    foundMatch = true;
+                    break;
+                }
+            }
+            if (foundMatch)
+            {
+                count--;
+                tempItems = new T[count];
+                for (int i = 0; i <= count; i++)
+                {
+                    if (items[i].Equals(item) && (removedItem == false))
+                    {
+                        removedItem = true;
+                    }
+                    else if (removedItem == true)
+                    {
+                        tempItems[i - 1] = items[i];
+                    }
+                    else
+                    {
+                        tempItems[i] = items[i];
+                    }
+                }
                 items = tempItems;
             }
-            
-
         }
         public static CustomList<T> operator +(CustomList<T> list1, CustomList<T> list2)
         {
             CustomList<T> list = new CustomList<T>();
-            foreach(T item in list1)
+            foreach (T item in list1)
             {
                 list.Add(item);
             }
@@ -102,7 +127,7 @@ namespace CustomList_proj
         {
             foreach (T item1 in list1)
             {
-                foreach(T item2 in list2)
+                foreach (T item2 in list2)
                 {
                     list1.Remove(item2);
                 }
@@ -116,8 +141,8 @@ namespace CustomList_proj
             count = list.Count + count;
             for (int i = 0; i < count; i++)
             {
-                result[i] = items[2 * i];
-                result[i + 1] = items[2 * i + 1];
+                result[2 * i] = items[i];
+                result[2 * i + 1] = list[i];
             }
             items = result;
 

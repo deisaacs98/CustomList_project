@@ -93,7 +93,8 @@ namespace CustomListUnitTests
             double price2 = 3.50;
             double price3 = 3.51;
             double price4 = 5.10;
-            int expected = 8;
+            double price5 = 3.21;
+            int expected = 5;
             int actual;
 
             //Act
@@ -101,6 +102,7 @@ namespace CustomListUnitTests
             list.Add(price2);
             list.Add(price3);
             list.Add(price4);
+            list.Add(price5);
             actual = list.Capacity;
 
 

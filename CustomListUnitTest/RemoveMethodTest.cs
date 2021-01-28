@@ -20,7 +20,7 @@ namespace CustomListUnitTests
             string shoe = "Jordans";
             int actual;
             int expected = 0;
-            
+
 
             // Act
             list.Add(shoe);
@@ -39,14 +39,17 @@ namespace CustomListUnitTests
         {
             // Arrange
             CustomList<string> list = new CustomList<string>();
-            string jersey = "Pippen";
-            string expected = null;
+            string jersey1 = "Pippen";
+            string jersey2 = "Bird";
+            string expected = "Bird";
             string actual;
 
 
             // Act
-            list.Add(jersey);
-            list.Remove(jersey);
+            list.Add(jersey1);
+            list.Add(jersey2);
+            list.Remove(jersey1);
+
             actual = list[0];
 
             //Assert
