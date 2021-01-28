@@ -166,7 +166,7 @@ namespace CustomListUnitTests
             int num4 = 4;
             int num5 = 5;
             int num6 = 6;
-            int expected = 8;
+            int expected = 6;
             int actual;
             //Act
             list1.Add(num1);

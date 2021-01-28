@@ -100,7 +100,6 @@ namespace CustomListUnitTests
             CustomList<int> list = new CustomList<int>();
             CustomList<int> list1 = new CustomList<int>();
             CustomList<int> list2 = new CustomList<int>();
-            CustomList<int> list3 = new CustomList<int>();
             int num1 = 1;
             int num2 = 2;
             int num3 = 3;
@@ -112,10 +111,10 @@ namespace CustomListUnitTests
             //Act
             list1.Add(num1);
             list1.Add(num2);
-            list2.Add(num3);
+            list1.Add(num3);
             list2.Add(num4);
-            list3.Add(num5);
-            list3.Add(num6);
+            list2.Add(num5);
+            list2.Add(num6);
             list = list1 - list2;
             actual = list.Count;
             //Assert
