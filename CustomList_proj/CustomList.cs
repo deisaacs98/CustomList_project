@@ -67,8 +67,10 @@ namespace CustomList_proj
                 tempItems[capacity - 1] = item;
                 items = tempItems;
             }
-            items[count - 1] = item;
-
+            else
+            {
+                items[count - 1] = item;
+            }
         }
 
         public void Remove(T item)
@@ -150,7 +152,15 @@ namespace CustomList_proj
 
         public override string ToString()
         {
-            string printList = "";
+            string printList="";
+            for(int i=0;i<count;i++)
+            {
+               
+                string name = items[i].ToString();
+                name += "\n";
+                printList += name;
+
+            }
             return printList;
         }
 
