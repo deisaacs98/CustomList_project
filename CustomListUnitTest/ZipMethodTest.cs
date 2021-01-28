@@ -70,10 +70,10 @@ namespace CustomListUnitTests
             int actual;
             //Act
             list.Add(firstNumber);
-            zipList.Add(secondNumber);
-            list.Add(thirdNumber);
-            list.Add(fourthNumber);
-            list.Add(fifthNumber);
+            list.Add(secondNumber);
+            zipList.Add(thirdNumber);
+            zipList.Add(fourthNumber);
+            zipList.Add(fifthNumber);
             list.Zip(zipList);
             actual = list[3];
             //Assert
@@ -98,8 +98,9 @@ namespace CustomListUnitTests
             list.Add(name3);
             zipList.Add(name4);
             zipList.Add(name5);
-
+            list.Zip(zipList);
             actual = list[2];
+
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -122,7 +123,7 @@ namespace CustomListUnitTests
             list.Add(name3);
             zipList.Add(name4);
             zipList.Add(name5);
-
+            list.Zip(zipList);
             actual = list.Count;
             //Assert
             Assert.AreEqual(expected, actual);
@@ -141,7 +142,7 @@ namespace CustomListUnitTests
             double price6 = 17.24;
             double price7 = 19.99;
             double price8 = 12.40;
-            double expected = 16;
+            double expected = 8;
             //Expected to be 16 here. This is because each list has a count of 4,
             //which requires that each capacity must equal 8.
             double actual;

@@ -140,12 +140,26 @@ namespace CustomList_proj
         {
             capacity = list.Capacity + capacity;
             T[] result = new T[capacity];
-            count = list.Count + count;
+            
             for (int i = 0; i < count; i++)
             {
-                result[2 * i] = items[i];
-                result[2 * i + 1] = list[i];
+                if(items[i]!=null&&list[i]!=null)
+                {
+                    result[2 * i] = items[i];
+                    result[2 * i + 1] = list[i];
+                }
+                else if (list[i] != null)
+                {
+                    result[2 * i] = list[i];
+                    result[2 * i + 1] = list[i];
+                }
+                else
+                {
+                    result[2 * i] = items[i];
+                    result[2 * i + 1] = items[i];
+                }
             }
+            count += list.Count;
             items = result;
 
         }
