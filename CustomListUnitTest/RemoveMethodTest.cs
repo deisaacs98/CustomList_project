@@ -20,6 +20,7 @@ namespace CustomListUnitTests
             string shoe = "Jordans";
             int actual;
             int expected = 0;
+            
 
             // Act
             list.Add(shoe);
@@ -41,6 +42,7 @@ namespace CustomListUnitTests
             string jersey = "Pippen";
             string expected = null;
             string actual;
+
 
             // Act
             list.Add(jersey);

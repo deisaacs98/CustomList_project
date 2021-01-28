@@ -22,6 +22,7 @@ namespace CustomListUnitTests
             int num5 = 5;
             int num6 = 6;
             int expected = 4;
+            int actual;
             //Act
             list1.Add(num1);
             list1.Add(num2);
@@ -50,6 +51,7 @@ namespace CustomListUnitTests
             int num5 = 5;
             int num6 = 6;
             int expected = 5;
+            int actual;
             //Act
             list1.Add(num1);
             list1.Add(num2);
@@ -79,6 +81,7 @@ namespace CustomListUnitTests
             int num5 = 5;
             int num6 = 6;
             int expected = 4;
+            int actual;
             //Act
             list1.Add(num1);
             list1.Add(num2);
@@ -107,6 +110,7 @@ namespace CustomListUnitTests
             double num5 = 5;
             double num6 = 6;
             double expected = 6;
+            double actual;
             //Act
             list1.Add(num1);
             list1.Add(num2);
@@ -135,6 +139,7 @@ namespace CustomListUnitTests
             int num5 = 5;
             int num6 = 6;
             int expected = 6;
+            int actual;
             //Act
             list1.Add(num1);
             list1.Add(num2);
@@ -162,6 +167,7 @@ namespace CustomListUnitTests
             int num5 = 5;
             int num6 = 6;
             int expected = 8;
+            int actual;
             //Act
             list1.Add(num1);
             list1.Add(num2);

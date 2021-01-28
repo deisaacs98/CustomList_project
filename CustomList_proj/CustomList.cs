@@ -18,7 +18,17 @@ namespace CustomList_proj
         private int capacity = 4;
         private int count;
         
-        
+        public T this[int index]
+        {
+            get
+            {
+                return items[index];
+            }
+            set
+            {
+                items[index] = value;
+            }
+        }
 
         public int Count
         {

@@ -22,7 +22,7 @@ namespace CustomListUnitTests
             //Act
             list.Add(firstNumber);
             list.Add(secondNumber);
-            list.ToString() = actual;
+            actual = list.ToString();
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -39,7 +39,7 @@ namespace CustomListUnitTests
             //Act
             list.Add(firstNumber);
             list.Add(secondNumber);
-            list.ToString() = actual;
+            actual = list.ToString();
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -61,7 +61,7 @@ namespace CustomListUnitTests
             list.Add(item3);
             list.Add(item4);
             list.Add(item5);
-            list.ToString() = actual;
+            actual = list.ToString();
             //Assert
             Assert.AreEqual(expected, actual);
         }
