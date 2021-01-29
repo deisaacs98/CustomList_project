@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 namespace CustomList_proj
 {
 
+<<<<<<< HEAD
     public class CustomList<T> : IEnumerable where T : IComparable
+=======
+    public class CustomList<T> : IEnumerable where T:IComparable
+>>>>>>> 576a25577522da541dfb022f6787417586837070
     {
 
         private T[] items = new T[4];
@@ -205,6 +209,7 @@ namespace CustomList_proj
         //1 2 3 4 5 6 7
         public void QuickSort(T[] list, int first, int last)
         {
+<<<<<<< HEAD
             if (first < last)
             {
                 int part = Partition(list, first, last);
@@ -216,12 +221,22 @@ namespace CustomList_proj
                 {
                     QuickSort(list, part + 1, last);
                 }
+=======
+            if(first<last)
+            {
+                int part = Partition(list, first, last-1);
+                tempItems[part] = list[part];
+                for(int i=0)
+                QuickSort(list, first, part - 1);
+                QuickSort(list, part + 1, last);
+>>>>>>> 576a25577522da541dfb022f6787417586837070
             }
         }
 
         public static int Partition(T[] list, int first, int last)
         {
             T pivot = list[last];
+<<<<<<< HEAD
             while (true)
             {
                 while(list[first].CompareTo(pivot)<0)
@@ -243,11 +258,28 @@ namespace CustomList_proj
                     return last;
                 }
             }
+=======
+            int firstInd = first-1;
+            int output = 0;
+            for(int i = firstInd;i<last;i++)
+            {
+                int comp = list[i].CompareTo(pivot);
+                if(comp<0)
+                {
+                    output++;
+                }
+            }
+            return output;
+>>>>>>> 576a25577522da541dfb022f6787417586837070
         }
 
         public void Sort()
         {
+<<<<<<< HEAD
             QuickSort(items, 0, count-1);
+=======
+            QuickSort(items, 1, count);
+>>>>>>> 576a25577522da541dfb022f6787417586837070
             items = tempItems;
         }
     }
