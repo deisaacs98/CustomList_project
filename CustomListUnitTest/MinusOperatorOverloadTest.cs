@@ -4,7 +4,7 @@ using CustomList_proj;
 
 namespace CustomListUnitTests
 {
-    //See README for more documentation.
+    //See .txt file for more documentation.
     [TestClass]
     public class MinusOperatorOverloadTest
     {

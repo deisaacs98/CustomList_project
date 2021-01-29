@@ -1,0 +1,18 @@
+- Operator Overload for CustomList Class
+
+Syntax:
+
+CustomList<T> list1 = new CustomList<T>();
+CustomList<T> list2 = new CustomList<T>();
+CustomList<T> list3 = new CustomList<T>();
+list3 = list1-list2;
+
+Parameters:
+2 CustomLists
+
+Returns:
+
+CustomList with matching items removed. For example:
+List 1 = [1,2,3]
+List 2 = [1,1,1]
+List 1 - List 2 = [2, 3]

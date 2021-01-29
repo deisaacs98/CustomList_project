@@ -125,7 +125,7 @@ namespace CustomList_proj
             }
             return list;
         }
-        //See README for more documentation.
+        //See .txt file for more documentation.
         public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
         {
             foreach (T item1 in list1)
