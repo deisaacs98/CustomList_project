@@ -17,7 +17,7 @@ namespace CustomListUnitTests
             CustomList<int> list = new CustomList<int>();
             int firstNumber = 1;
             int secondNumber = 2;
-            string expected = "1\n2\n";
+            string expected = "1 2 ";
             string actual;
             //Act
             list.Add(firstNumber);
@@ -34,7 +34,7 @@ namespace CustomListUnitTests
             CustomList<double> list = new CustomList<double>();
             double firstNumber = 1.5;
             double secondNumber = 2.9;
-            string expected = "1.5\n2.9\n";
+            string expected = "1.5 2.9 ";
             string actual;
             //Act
             list.Add(firstNumber);
@@ -53,7 +53,7 @@ namespace CustomListUnitTests
             string item3 = "Book";
             string item4 = "Pencil";
             string item5 = "Glasses";
-            string expected = "Headphones\nCup\nBook\nPencil\nGlasses";
+            string expected = "Headphones Cup Book Pencil Glasses";
             string actual;
             //Act
             list.Add(item1);

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CustomList_proj
 {
 
-    public class CustomList<T> : IEnumerable
+    public class CustomList<T> : IEnumerable where T:IComparable
     {
 
         private T[] items = new T[4];
@@ -171,7 +171,7 @@ namespace CustomList_proj
             {
                
                 string name = items[i].ToString();
-                name += "\n";
+                name += " ";
                 printList += name;
 
             }
@@ -184,6 +184,56 @@ namespace CustomList_proj
             {
                 yield return items[i];
             }
+        }
+
+        public int CompareTo(T other)
+        {
+            return other.CompareTo(this);
+        }
+        //Since Array.Sort() uses the QuickSort algorithm, let's just call this method QuickSort().
+        //This algorithm works by picking a value in the list as a pivot. This will split the
+        //list into two parts, values above the pivot and values below the pivot. The process is
+        //then repeated until the list is in order.
+        //
+        //The example below should demonstrate what we're trying to do here. The first pivot point
+        //will be the last item in the list:
+        //
+        //[2, 6, 1, 5, 7, 3, 4]                           We need to create two new arrays 
+        //[2,1,3] 4 [6,5,7]                               by comparing each value to the pivot.  
+        //[2,1] 3 4 [6,5] 7                               And then repeat...
+        //1 2 3 4 5 6 7
+        public void QuickSort(T[] list, int first, int last)
+        {
+            if(first<last)
+            {
+                int part = Partition(list, first, last-1);
+                tempItems[part] = list[part];
+                for(int i=0)
+                QuickSort(list, first, part - 1);
+                QuickSort(list, part + 1, last);
+            }
+        }
+
+        public static int Partition(T[] list, int first, int last)
+        {
+            T pivot = list[last];
+            int firstInd = first-1;
+            int output = 0;
+            for(int i = firstInd;i<last;i++)
+            {
+                int comp = list[i].CompareTo(pivot);
+                if(comp<0)
+                {
+                    output++;
+                }
+            }
+            return output;
+        }
+
+        public void Sort()
+        {
+            QuickSort(items, 1, count);
+            items = tempItems;
         }
     }
 }
