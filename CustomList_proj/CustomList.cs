@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CustomList_proj
 {
 
-    public class CustomList<T> : IEnumerable
+    public class CustomList<T> : IEnumerable where T : IComparable
     {
 
         private T[] items = new T[4];
@@ -80,11 +80,11 @@ namespace CustomList_proj
             //into account. This is not completely necessary, but is good for consistency.
             //
 
-            bool foundMatch=false;
+            bool foundMatch = false;
             bool removedItem = false;
             foreach (T thing in items)
             {
-                if(thing.Equals(item))
+                if (thing.Equals(item))
                 {
                     foundMatch = true;
                     break;
@@ -125,6 +125,7 @@ namespace CustomList_proj
             }
             return list;
         }
+        //See README for more documentation.
         public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
         {
             foreach (T item1 in list1)
@@ -140,10 +141,10 @@ namespace CustomList_proj
         {
             capacity = list.Capacity + capacity;
             T[] result = new T[capacity];
-            
+
             for (int i = 0; i < count; i++)
             {
-                if(items[i]!=null&&list[i]!=null)
+                if (items[i] != null && list[i] != null)
                 {
                     result[2 * i] = items[i];
                     result[2 * i + 1] = list[i];
@@ -166,12 +167,12 @@ namespace CustomList_proj
 
         public override string ToString()
         {
-            string printList="";
-            for(int i=0;i<count;i++)
+            string printList = "";
+            for (int i = 0; i < count; i++)
             {
-               
+
                 string name = items[i].ToString();
-                name += "\n";
+                name += " ";
                 printList += name;
 
             }
@@ -184,6 +185,70 @@ namespace CustomList_proj
             {
                 yield return items[i];
             }
+        }
+
+        public int CompareTo(T other)
+        {
+            return other.CompareTo(this);
+        }
+        //Since Array.Sort() uses the QuickSort algorithm, let's just call this method QuickSort().
+        //This algorithm works by picking a value in the list as a pivot. This will split the
+        //list into two parts, values above the pivot and values below the pivot. The process is
+        //then repeated until the list is in order.
+        //
+        //The example below should demonstrate what we're trying to do here. The first pivot point
+        //will be the last item in the list:
+        //
+        //[2, 6, 1, 5, 7, 3, 4]                           We need to create two new arrays 
+        //[2,1,3] 4 [6,5,7]                               by comparing each value to the pivot.  
+        //[2,1] 3 4 [6,5] 7                               And then repeat...
+        //1 2 3 4 5 6 7
+        public void QuickSort(T[] list, int first, int last)
+        {
+            if (first < last)
+            {
+                int part = Partition(list, first, last);
+                if (part > 1)
+                {
+                    QuickSort(list, first, part - 1);
+                }
+                if(part+1<last)
+                {
+                    QuickSort(list, part + 1, last);
+                }
+            }
+        }
+
+        public static int Partition(T[] list, int first, int last)
+        {
+            T pivot = list[last];
+            while (true)
+            {
+                while(list[first].CompareTo(pivot)<0)
+                {
+                    first++;
+                }
+                while (list[last].CompareTo(pivot) > 0)
+                {
+                    last--;
+                }
+                if(first<last)
+                {
+                    T temp = list[last];
+                    list[last] = list[first];
+                    list[first] = temp;
+                }
+                else
+                {
+                    return last;
+                }
+            }
+        }
+
+        public void Sort()
+        {
+            QuickSort(items, 0, count-1);
+            items = tempItems;
         }
     }
 }

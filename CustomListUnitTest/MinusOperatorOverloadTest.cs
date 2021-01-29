@@ -4,7 +4,7 @@ using CustomList_proj;
 
 namespace CustomListUnitTests
 {
-
+    //See README for more documentation.
     [TestClass]
     public class MinusOperatorOverloadTest
     {
@@ -64,34 +64,6 @@ namespace CustomListUnitTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
-        //[TestMethod]
-        //public void OverloadMinusOperator_SubtractListFromIdenticalList_CheckIndex0()
-        //{
-        //    //Arrange
-        //    CustomList<int> list = new CustomList<int>();
-        //    CustomList<int> list1 = new CustomList<int>();
-        //    CustomList<int> list2 = new CustomList<int>();
-        //    int num1 = 1;
-        //    int num2 = 2;
-        //    int num3 = 3;
-        //    int num4 = 1;
-        //    int num5 = 2;
-        //    int num6 = 3;
-        //    int expected = null;
-        //    int actual;
-            //Act
-        //    list1.Add(num1);
-        //    list1.Add(num2);
-        //    list1.Add(num3);
-        //    list2.Add(num4);
-        //    list2.Add(num5);
-        //    list2.Add(num6);
-        //    list = list1 - list2;
-        //    actual = list[0];
-            //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
 
         [TestMethod]
         public void OverloadMinusOperator_SubtractNonMatchingList_CheckCount()
