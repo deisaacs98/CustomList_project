@@ -54,7 +54,6 @@ namespace CustomListUnitTests
 
             string expected = "2.3 3 6.33 6.34 6.35 9.3 10.09 23.321 32.3 ";
 
-            string expected ="2.3 3 6.33 6.34 6.35 9.3 10.09 23.321 32.3";
 
             //Act
             list.Add(number1);

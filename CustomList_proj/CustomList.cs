@@ -216,15 +216,6 @@ namespace CustomList_proj
                 {
                     QuickSort(list, part + 1, last);
                 }
-
-            if(first<last)
-            {
-                int part = Partition(list, first, last-1);
-                tempItems[part] = list[part];
-                for(int i=0)
-                QuickSort(list, first, part - 1);
-                QuickSort(list, part + 1, last);
-
             }
         }
 
@@ -253,19 +244,6 @@ namespace CustomList_proj
                     return last;
                 }
             }
-
-            int firstInd = first-1;
-            int output = 0;
-            for(int i = firstInd;i<last;i++)
-            {
-                int comp = list[i].CompareTo(pivot);
-                if(comp<0)
-                {
-                    output++;
-                }
-            }
-            return output;
-
         }
 
         public void Sort()
@@ -273,9 +251,6 @@ namespace CustomList_proj
 
             QuickSort(items, 0, count-1);
 
-            QuickSort(items, 1, count);
-
-            items = tempItems;
         }
     }
 }
