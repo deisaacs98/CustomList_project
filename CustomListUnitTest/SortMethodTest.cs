@@ -8,7 +8,6 @@ namespace CustomListUnitTests
     public class SortMethodTest
     {
         [TestMethod]
-<<<<<<< HEAD
         public void SortList_Integer_CheckOrder()
         {
             //Arrange
@@ -37,17 +36,9 @@ namespace CustomListUnitTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
-        [TestMethod]
-        public void SortList_Double_CheckOrder()
-=======
-        public void SortList_Integer()
-        {
-
-        }
         [TestMethod]
         public void SortList_Double()
->>>>>>> 576a25577522da541dfb022f6787417586837070
+
         {
             //Arrange
             CustomList<double> list = new CustomList<double>();
@@ -60,11 +51,11 @@ namespace CustomListUnitTests
             double number7 = 10.09;
             double number8 = 9.3;
             double number9 = 6.35;
-<<<<<<< HEAD
+
             string expected = "2.3 3 6.33 6.34 6.35 9.3 10.09 23.321 32.3 ";
-=======
+
             string expected ="2.3 3 6.33 6.34 6.35 9.3 10.09 23.321 32.3";
->>>>>>> 576a25577522da541dfb022f6787417586837070
+
             //Act
             list.Add(number1);
             list.Add(number2);
@@ -82,11 +73,8 @@ namespace CustomListUnitTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-<<<<<<< HEAD
-        public void SortList_String_CheckOrder()
-=======
+
         public void SortList_String()
->>>>>>> 576a25577522da541dfb022f6787417586837070
         {
             //Arrange
             CustomList<string> list = new CustomList<string>();
@@ -111,7 +99,7 @@ namespace CustomListUnitTests
         }
 
         [TestMethod]
-<<<<<<< HEAD
+
         public void SortList_Integer_CheckCount()
         {
             //Arrange
@@ -139,16 +127,7 @@ namespace CustomListUnitTests
 
             //Assert
             Assert.AreEqual(expected, actual);
-=======
-        public void SortList()
-        {
-            //Arrange
 
-            //Act
-
-            //Assert
-
->>>>>>> 576a25577522da541dfb022f6787417586837070
         }
     }
 }
